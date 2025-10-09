@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="output.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1"
+      type="module"
+    ></script>
+  </head>
+  <body class="font-[Epilogue] bg-[hsl(0,0%,98%)]">
+    <div class="flex justify-between items-center mx-3 lg:mx-10 my-8">
+      <div class="flex gap-14">
+        <img src="images/logo.svg" alt="" />
+        <nav class="hidden lg:block">
+          <ul class="flex space-x-10 text-[hsl(0,0%,41%)]">
+            <li>
+              <el-dropdown>
+                <button
+                  class="dropnav group cursor-pointer inline-flex items-center gap-x-1.5 hover:text-[hsl(0,0%,8%)]"
+                >
+                  Features
+                  <img
+                    class="group-hover:[filter:brightness(0)_saturate(100%)_invert(0%)_sepia(4%)_saturate(4440%)_hue-rotate(293deg)_brightness(84%)_contrast(84%)]"
+                    src="images/icon-arrow-down.svg"
+                    alt=""
+                  />
+                </button>
+                <el-menu
+                  anchor="bottom end"
+                  popover
+                  class="origin-top-right rounded-xl shadow-xl transition transition-discrete [--anchor-gap:--spacing(2)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
+                >
+                  <div class="p-8 space-y-3 text-[hsl(0,0%,41%)]">
+                    <a href="#" class="block"
+                      ><span class="inline-flex items-center gap-4"
+                        ><img src="images/icon-todo.svg" alt="" />Todo
+                        List</span
+                      ></a
+                    >
+                    <a href="#" class="block"
+                      ><span class="inline-flex items-center gap-4"
+                        ><img src="images/icon-calendar.svg" alt="" />Calendar
+                      </span></a
+                    >
+                    <a href="#" class="block"
+                      ><span class="inline-flex items-center gap-4"
+                        ><img
+                          src="images/icon-reminders.svg"
+                          alt=""
+                        />Reminders</span
+                      ></a
+                    >
+                    <a href="#" class="block"
+                      ><span class="inline-flex items-center gap-4"
+                        ><img
+                          src="images/icon-planning.svg"
+                          alt=""
+                        />Planning</span
+                      ></a
+                    >
+                  </div>
+                </el-menu>
+              </el-dropdown>
+            </li>
+            <li>
+              <el-dropdown>
+                <button
+                  class="dropnav group cursor-pointer inline-flex items-center gap-x-1.5 hover:text-[hsl(0,0%,8%)]"
+                >
+                  Company
+                  <img
+                    class="group-hover:[filter:brightness(0)_saturate(100%)_invert(0%)_sepia(4%)_saturate(4440%)_hue-rotate(293deg)_brightness(84%)_contrast(84%)]"
+                    src="images/icon-arrow-down.svg"
+                    alt=""
+                  />
+                </button>
+                <el-menu
+                  anchor="bottom end"
+                  popover
+                  class="origin-top-right rounded-xl shadow-xl transition transition-discrete [--anchor-gap:--spacing(2)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
+                >
+                  <div class="p-8 space-y-3 text-[hsl(0,0%,41%)]">
+                    <a href="#" class="block">History</a>
+                    <a href="#" class="block">Our Team</a>
+                    <a href="#" class="block">Blog</a>
+                  </div>
+                </el-menu>
+              </el-dropdown>
+            </li>
+            <li class="cursor-pointer hover:text-[hsl(0,0%,8%)]">Careers</li>
+            <li class="cursor-pointer hover:text-[hsl(0,0%,8%)]">About</li>
+          </ul>
+        </nav>
+      </div>
+      <div class="hidden lg:block">
+        <div class="flex gap-10 text-[hsl(0,0%,41%)]">
+          <button class="cursor-pointer hover:text-[hsl(0,0%,8%)]">
+            Login
+          </button>
+          <button
+            class="cursor-pointer hover:text-[hsl(0,0%,8%)] border-2 px-5 py-2 rounded-2xl"
+          >
+            Register
+          </button>
+        </div>
+      </div>
+      <div class="lg:hidden">
+        <img
+          id="hamburger"
+          onclick="toggleNav()"
+          src="images/icon-menu.svg"
+          alt=""
+        />
+      </div>
+    </div>
+
+    <section class="max-w-6xl mx-auto my-2 lg:my-16">
+      <div class="grid lg:grid-cols-2 lg:items-end gap-14 xl:gap-32 lg:mx-8 xl:mx-0">
+        <div
+          class="grid gap-5 xl:gap-12 order-2 lg:order-1 text-center lg:text-start mx-3 lg:mx-0"
+        >
+          <h1
+            class="font-bold text-4xl lg:text-[78px] lg:leading-20 text-[hsl(0,0%,8%)]"
+          >
+            Make remote work
+          </h1>
+          <p class="lg:text-lg font-medium lg:pr-20 text-[hsl(0,0%,41%)]">
+            Get your team in sync, no matter your location. Streamline
+            processes, create team rituals, and watch productivity soar.
+          </p>
+          <div>
+            <button
+              class="cursor-pointer bg-[hsl(0,0%,8%)] hover:bg-transparent text-white hover:text-[hsl(0,0%,8%)] border rounded-xl px-6 py-3 font-medium transition-all duration-150"
+            >
+              Learn more
+            </button>
+          </div>
+          <div class="grid grid-cols-4 place-items-center mt-8 lg:mt-12">
+            <img src="images/client-databiz.svg" alt="" />
+            <img src="images/client-audiophile.svg" alt="" />
+            <img src="images/client-meet.svg" alt="" />
+            <img src="images/client-maker.svg" alt="" />
+          </div>
+        </div>
+        <div class="order-1 lg:order-2">
+          <img
+            class="hidden lg:block"
+            src="images/image-hero-desktop.png"
+            alt=""
+          />
+          <img class="lg:hidden" src="images/image-hero-mobile.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Olusoyemi Oluwatimilehin</a>.
+    </div>
+    <!-- Mobile Menu -->
+    <section id="mobileMenu" class="hidden">
+      <section class="fixed inset-0 flex justify-end bg-black/20">
+        <div class="bg-white w-56 h-screen p-6 pt-8 pr-4">
+          <div class="flex justify-end mb-7">
+            <img
+              id="closeIcon"
+              onclick="toggleCloseNav()"
+              src="images/icon-close-menu.svg"
+              alt=""
+            />
+          </div>
+          <ul class="text-[hsl(0,0%,41%)] font-medium space-y-4">
+            <div class="dropdown">
+              <li>
+                Features
+                <img
+                  class="pl-2 inline"
+                  src="images/icon-arrow-down.svg"
+                  alt=""
+                />
+              </li>
+              <div class="p-6 space-y-3 text-[hsl(0,0%,41%)] hidden">
+                <a href="#" class="block"
+                  ><span class="inline-flex items-center gap-4"
+                    ><img src="images/icon-todo.svg" alt="" />Todo List</span
+                  ></a
+                >
+                <a href="#" class="block"
+                  ><span class="inline-flex items-center gap-4"
+                    ><img src="images/icon-calendar.svg" alt="" />Calendar
+                  </span></a
+                >
+                <a href="#" class="block"
+                  ><span class="inline-flex items-center gap-4"
+                    ><img
+                      src="images/icon-reminders.svg"
+                      alt=""
+                    />Reminders</span
+                  ></a
+                >
+                <a href="#" class="block"
+                  ><span class="inline-flex items-center gap-4"
+                    ><img src="images/icon-planning.svg" alt="" />Planning</span
+                  ></a
+                >
+              </div>
+            </div>
+            <div class="dropdown">
+              <li>
+                Company
+                <img
+                  class="pl-2 inline"
+                  src="images/icon-arrow-down.svg"
+                  alt=""
+                />
+              </li>
+              <div class="p-6 space-y-3 text-[hsl(0,0%,41%)] hidden">
+                <a href="#" class="block">History</a>
+                <a href="#" class="block">Our Team</a>
+                <a href="#" class="block">Blog</a>
+              </div>
+            </div>
+            <li>Careers</li>
+            <li>About</li>
+
+            <div class="mt-10">
+              <div class="grid gap-4 text-[hsl(0,0%,41%)]">
+                <button class="cursor-pointer hover:text-[hsl(0,0%,8%)]">
+                  Login
+                </button>
+                <button
+                  class="cursor-pointer hover:text-[hsl(0,0%,8%)] border-2 px-5 py-2 rounded-2xl"
+                >
+                  Register
+                </button>
+              </div>
+            </div>
+          </ul>
+        </div>
+      </section>
+    </section>
+    <script>
+      document.querySelectorAll(".dropdown").forEach((dropdown) => {
+        const btn = dropdown.querySelector("li");
+        const menu = dropdown.querySelector("div");
+        const arrow = dropdown.querySelector("img");
+
+        btn.addEventListener("click", () => {
+          menu.classList.toggle("hidden");
+          arrow.classList.toggle("rotate-180");
+        });
+      });
+      //
+
+  document.querySelectorAll(".dropnav").forEach((btn) => {
+    const arrow = btn.querySelector("img");
+
+    btn.addEventListener("click", () => {
+      arrow.classList.toggle("rotate-180");
+    });
+  });
+
+      //
+      function toggleNav() {
+        const menu = document.getElementById("mobileMenu");
+        menu.classList.remove("hidden");
+      }
+      function toggleCloseNav() {
+        const menu = document.getElementById("mobileMenu");
+        menu.classList.add("hidden");
+      }
+    </script>
+  </body>
+</html>
